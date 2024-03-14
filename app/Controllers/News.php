@@ -40,8 +40,12 @@ class News extends BaseController
     public function new()
     {
         helper('form');
-
-        return view('templates/header', ['title' => 'Create a news item'])
+    
+        // Muestra cualquier mensaje de error relacionado con CSRF que se haya establecido previamente
+        // utilizando session()->setFlashdata('error', 'Mensaje de error CSRF');
+        $error = session()->getFlashdata('error');
+    
+        return view('templates/header', ['title' => 'Create a news item', 'error' => $error])
             . view('news/create')
             . view('templates/footer');
     }
