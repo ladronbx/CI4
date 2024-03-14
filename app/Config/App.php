@@ -175,4 +175,11 @@ class App extends BaseConfig
      * @see http://www.w3.org/TR/CSP/
      */
     public bool $CSPEnabled = false;
+
+    public $cookiePrefix   = '';
+    public $cookieDomain   = '';
+    public $cookiePath     = '/';
+    public $cookieSecure   = false;
+    public $cookieHTTPOnly = false;
+    public $cookieSameSite = 'Lax'; // None, Lax, Strict, or null
 }
